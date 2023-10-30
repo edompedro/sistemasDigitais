@@ -1,0 +1,14 @@
+-- define the entity
+entity bit_extender is
+    port (
+        bit_in: in std_logic;
+        bits_out: out std_logic_vector(7 downto 0)
+    );
+end bit_extender;
+
+-- define the behavior of the entity
+architecture behavior of bit_extender is
+begin
+    -- extend the input bit to 8 bits
+    bits_out <= (others => bit_in);
+end behavior;

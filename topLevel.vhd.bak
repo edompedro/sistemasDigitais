@@ -1,0 +1,34 @@
+--bibliotecas do projeto
+library ieee;
+use ieee.std_logic_1164.all; 
+
+-- definir a entidade
+entity toplevel is 
+    port (
+        bit_inTopLevel: in std_logic;
+        bits_outTopLevel: out std_logic_vector(1 downto 0)
+    );
+end toplevel;
+
+-- comp|tamento da entidade
+architecture comportamento of toplevel is 
+
+
+component decoder is 
+    port (
+        bit_in: in std_logic;
+        bits_out: out std_logic_vector(1 downto 0)
+    );
+end component;
+
+
+
+
+begin
+
+    decoder1: decoder port map(
+		bit_inTopLevel => bit_in, bits_out => bits_outTopLevel
+	 );
+	 
+
+end comportamento;
