@@ -45,7 +45,7 @@ begin
         SX => SXTopLevel, 
         SY => SYTopLevel,
         W => WTopLevel,
-        store => storeTopLevel,
+        saida => saidaTopLevel,
         zeros => zerosTopLevel,
         Q => QTopLevel
 	 );
