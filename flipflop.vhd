@@ -4,9 +4,11 @@ use ieee.std_logic_1164.all;
 --entidades
 
 entity flipflop is
-port(CLK, SX, SY, W : in std_logic;
-						  saida : out std_logic_vector(7 downto 0);
-						  D, zeros: in std_logic_vector(7 downto 0));
+port(
+		CLK, SX, SY, W : in std_logic;
+		saida : out std_logic_vector(7 downto 0);
+		D, zeros: in std_logic_vector(7 downto 0)
+	);
 end flipflop;
 
 --comportamento

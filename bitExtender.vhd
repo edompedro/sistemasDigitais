@@ -11,8 +11,8 @@ entity bitExtender is
 end bitExtender;
 
 -- define the behavior of the entity
-architecture behavior of bit_extender is
+architecture comportamentoBitExtender of bitExtender is
 begin
     -- extend the input bit to 8 bits
     bitsOut <= (others => bitIn);
-end behavior;
+end comportamentoBitExtender;
