@@ -3,13 +3,13 @@ library ieee;
 use ieee.std_logic_1164.all; 
 
 -- Define the entity
-entity decoder is 
+entity decoder is   
     port (
         -- Single bit input
         bitIn: in std_logic;
 
         -- Two single bit outputs
-        bitsOut: out std_logic_vector(1 downto 0)
+        bitsOut1, bitsOut2: out std_logic
     );
 end decoder;
 
@@ -18,6 +18,7 @@ architecture comportamentodecoder of decoder is
 begin
     -- Behavior of the circuit
 
-    bitsOut <= bitIn & not bitIn;
+    bitsOut1 <= bitIn;
+    bitsOut2 <= not bitIn;
 
 end comportamentodecoder;

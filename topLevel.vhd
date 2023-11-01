@@ -21,10 +21,12 @@ entity toplevel is
         CLKTopLevel: in std_logic;
 
         -- Decoder 1
-        bitsOutTopLevel1: out std_logic_vector(1 downto 0);
+        bitsOutTopLevel11: buffer std_logic;
+        bitsOutTopLevel12: buffer std_logic;
 
         -- Decoder 2
-        bitsOutTopLevel2: out std_logic_vector(1 downto 0);
+        bitsOutTopLevel21: buffer std_logic;
+        bitsOutTopLevel22: buffer std_logic;
 
         -- Flipflop1
         DTopLevel1, zerosTopLevel1: in std_logic_vector(7 downto 0);
@@ -52,7 +54,7 @@ architecture comportamento of toplevel is
 component decoder is 
     port (
         bitIn: in std_logic;
-        bitsOut: out std_logic_vector(1 downto 0)
+        bitsOut1, bitsOut2: out std_logic
     );
 end component;
 
@@ -74,19 +76,19 @@ end component;
 begin
 
     decoder1: decoder port map(
-		bitIn => enderecoTopLevel1, bitsOut => bitsOutTopLevel1
+		bitIn => enderecoTopLevel1, bitsOut1 => bitsOutTopLevel11, bitsOut2 => bitsOutTopLevel12
     );
 
     decoder2: decoder port map(
-		bitIn => enderecoTopLevel2, bitsOut => bitsOutTopLevel2
+		bitIn => enderecoTopLevel2, bitsOut1 => bitsOutTopLevel21, bitsOut2 => bitsOutTopLevel22
     );
 	 
     flipflop1: flipflop port map(
         D => DTopLevel1, 
         zeros => zerosTopLevel1,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel1(0),
-        SY => bitsOutTopLevel2(0),
+        SX => bitsOutTopLevel11,
+        SY => bitsOutTopLevel21,
         W => escritaTopLevel,
         saida => saidaTopLevel1
     );
@@ -95,8 +97,8 @@ begin
         D => DTopLevel2,
         zeros => zerosTopLevel2,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel2(1),
-        SY => bitsOutTopLevel1(0),
+        SX => bitsOutTopLevel22,
+        SY => bitsOutTopLevel11,
         W => escritaTopLevel,
         saida => saidaTopLevel2
     );
@@ -105,8 +107,8 @@ begin
         D => DTopLevel3,
         zeros => zerosTopLevel3,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel0(1),
-        SY => bitsOutTopLevel1(0),
+        SX => bitsOutTopLevel21,
+        SY => bitsOutTopLevel11,
         W => escritaTopLevel,
         saida => saidaTopLevel3
     );
@@ -115,8 +117,8 @@ begin
         D => DTopLevel4,
         zeros => zerosTopLevel4,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel1(1),
-        SY => bitsOutTopLevel0(1),
+        SX => bitsOutTopLevel12,
+        SY => bitsOutTopLevel22,
         W => escritaTopLevel,
         saida => saidaTopLevel4
     );
