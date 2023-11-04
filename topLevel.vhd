@@ -11,7 +11,7 @@ entity toplevel is
         leituraTopLevel: in std_logic;
         escritaTopLevel: in std_logic;
         saidaTopLevel: out std_logic_vector(7 downto 0);
-        leituraExtendidaTopLevel: out std_logic_vector(7 downto 0);
+        leituraExtendidaTopLevel: buffer std_logic_vector(7 downto 0);
 
         -- Endereços
         enderecoTopLevel1: in std_logic;
@@ -30,19 +30,28 @@ entity toplevel is
 
         -- Flipflop1
         DTopLevel1, zerosTopLevel1: in std_logic_vector(7 downto 0);
-        saidaTopLevel1: out std_logic_vector(7 downto 0);
+        saidaTopLevel1: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop2 
         DTopLevel2, zerosTopLevel2: in std_logic_vector(7 downto 0);
-        saidaTopLevel2: out std_logic_vector(7 downto 0);
+        saidaTopLevel2: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop3
         DTopLevel3, zerosTopLevel3: in std_logic_vector(7 downto 0);
-        saidaTopLevel3: out std_logic_vector(7 downto 0);
+        saidaTopLevel3: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop4
         DTopLevel4, zerosTopLevel4: in std_logic_vector(7 downto 0);
-        saidaTopLevel4: out std_logic_vector(7 downto 0)
+        saidaTopLevel4: buffer std_logic_vector(7 downto 0);
+
+        -- And
+        saidaAnd: out std_logic_vector(7 downto 0);
+
+        -- OR
+        saidaOr1: buffer std_logic_vector(7 downto 0);
+        saidaOr2: buffer std_logic_vector(7 downto 0);
+        saidaOr3: buffer std_logic_vector(7 downto 0)
+
 
     );
 end toplevel;
@@ -71,6 +80,20 @@ component flipflop is
             D, zeros: in std_logic_vector(7 downto 0);
             saida : out std_logic_vector(7 downto 0)
 		);
+end component;
+
+component andGate is
+    port(
+            EntryAndA, EntryAndB : in std_logic_vector(7 downto 0);
+            outputAnd : out std_logic_vector(7 downto 0)
+    );
+end component;
+
+component orGate is
+    port(
+            EntryOrA, EntryOrB : in std_logic_vector(7 downto 0);
+            outputOr : out std_logic_vector(7 downto 0)
+    );
 end component;
 
 begin
@@ -127,6 +150,29 @@ begin
         bitIn => leituraTopLevel,
         bitsOut => leituraExtendidaTopLevel
     );
+
+    orGate1: orGate port map(
+        EntryOrA => saidaTopLevel1,
+        ENtryOrB => saidaTopLevel3,
+        outputOr => saidaOr1
+    );
 	 
+    orGate2: orGate port map(
+        EntryOrA => saidaTopLevel2,
+        ENtryOrB => saidaTopLevel4,
+        outputOr => saidaOr2
+    );
+
+    orGate3: orGate port map(
+        EntryOrA => saidaOr1,
+        ENtryOrB => saidaOr2,
+        outputOr => saidaOr3
+    );
+
+    andGate1: andGate port map(
+        EntryAndA => leituraExtendidaTopLevel,
+        EntryAndB => saidaOr3,
+        outputAnd => saidaAnd
+    );
 
 end comportamento;
