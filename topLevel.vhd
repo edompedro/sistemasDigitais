@@ -7,7 +7,7 @@ entity toplevel is
     port (
 
         -- Entrada
-        entradaTopLevel: in std_logic_vector(7 downto 0);
+        entradaTopLevel,zerosFlipFlop: in std_logic_vector(7 downto 0);
         leituraTopLevel: in std_logic;
         escritaTopLevel: in std_logic;
         saidaTopLevel: out std_logic_vector(7 downto 0);
@@ -29,19 +29,19 @@ entity toplevel is
         bitsOutTopLevel22: buffer std_logic;
 
         -- Flipflop1
-        DTopLevel1, zerosTopLevel1: in std_logic_vector(7 downto 0);
+--        DTopLevel1, zerosTopLevel1: in std_logic_vector(7 downto 0);
         saidaTopLevel1: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop2 
-        DTopLevel2, zerosTopLevel2: in std_logic_vector(7 downto 0);
+--        DTopLevel2, zerosTopLevel2: in std_logic_vector(7 downto 0);
         saidaTopLevel2: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop3
-        DTopLevel3, zerosTopLevel3: in std_logic_vector(7 downto 0);
+--        DTopLevel3, zerosTopLevel3: in std_logic_vector(7 downto 0);
         saidaTopLevel3: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop4
-        DTopLevel4, zerosTopLevel4: in std_logic_vector(7 downto 0);
+--        DTopLevel4, zerosTopLevel4: in std_logic_vector(7 downto 0);
         saidaTopLevel4: buffer std_logic_vector(7 downto 0);
 
         -- And
@@ -107,8 +107,8 @@ begin
     );
 	 
     flipflop1: flipflop port map(
-        D => DTopLevel1, 
-        zeros => zerosTopLevel1,
+        D => entradaTopLevel, 
+        zeros => zerosFlipFlop,
         CLK => CLKTopLevel,
         SX => bitsOutTopLevel11,
         SY => bitsOutTopLevel21,
@@ -117,28 +117,28 @@ begin
     );
 
     flipflop2: flipflop port map(
-        D => DTopLevel2,
-        zeros => zerosTopLevel2,
+        D => entradaTopLevel,
+        zeros => zerosFlipFlop,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel22,
-        SY => bitsOutTopLevel11,
+        SX => bitsOutTopLevel11,
+        SY => bitsOutTopLevel22,
         W => escritaTopLevel,
         saida => saidaTopLevel2
     );
 
     flipflop3: flipflop port map(
-        D => DTopLevel3,
-        zeros => zerosTopLevel3,
+        D => entradaTopLevel,
+        zeros => zerosFlipFlop,
         CLK => CLKTopLevel,
-        SX => bitsOutTopLevel21,
-        SY => bitsOutTopLevel11,
+        SX => bitsOutTopLevel12,
+        SY => bitsOutTopLevel21,
         W => escritaTopLevel,
         saida => saidaTopLevel3
     );
 
     flipflop4: flipflop port map(
-        D => DTopLevel4,
-        zeros => zerosTopLevel4,
+        D => entradaTopLevel,
+        zeros => zerosFlipFlop,
         CLK => CLKTopLevel,
         SX => bitsOutTopLevel12,
         SY => bitsOutTopLevel22,
