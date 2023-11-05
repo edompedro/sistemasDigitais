@@ -29,23 +29,16 @@ entity toplevel is
         bitsOutTopLevel22: buffer std_logic;
 
         -- Flipflop1
---        DTopLevel1, zerosTopLevel1: in std_logic_vector(7 downto 0);
         saidaTopLevel1: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop2 
---        DTopLevel2, zerosTopLevel2: in std_logic_vector(7 downto 0);
         saidaTopLevel2: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop3
---        DTopLevel3, zerosTopLevel3: in std_logic_vector(7 downto 0);
         saidaTopLevel3: buffer std_logic_vector(7 downto 0);
 
         -- Flipflop4
---        DTopLevel4, zerosTopLevel4: in std_logic_vector(7 downto 0);
         saidaTopLevel4: buffer std_logic_vector(7 downto 0);
-
-        -- And
-        saidaAnd: out std_logic_vector(7 downto 0);
 
         -- OR
         saidaOr1: buffer std_logic_vector(7 downto 0);
@@ -172,7 +165,7 @@ begin
     andGate1: andGate port map(
         EntryAndA => leituraExtendidaTopLevel,
         EntryAndB => saidaOr3,
-        outputAnd => saidaAnd
+        outputAnd => saidaTopLevel
     );
 
 end comportamento;
