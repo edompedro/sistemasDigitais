@@ -1,0 +1,100 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dG:/Meu Drive/FURG/3/SD/sistemasDigitais/simulation/qsim
+Etoplevel
+Z1 w1699308703
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 K8IbX`K5[Y1gJUKg2X_071
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+R0
+Z10 8sistemasDigitais.vho
+Z11 FsistemasDigitais.vho
+l0
+L36
+VkeU@VJ`a1]a^aC5O;@;g:2
+!s100 h4J85TXf[R?GWU=i3C;_[1
+Z12 OV;C;10.5b;63
+32
+Z13 !s110 1699308705
+!i10b 1
+Z14 !s108 1699308705.000000
+Z15 !s90 -work|work|sistemasDigitais.vho|
+Z16 !s107 sistemasDigitais.vho|
+!i113 1
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 8 toplevel 0 22 keU@VJ`a1]a^aC5O;@;g:2
+l247
+L61
+VN@TBo;6T4Sjf<n8Kh5U530
+!s100 EEJinEK?jlADSFiX[PV1B0
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Etoplevel_vhd_vec_tst
+Z19 w1699308701
+R7
+R8
+R0
+Z20 8Waveform1.vwf.vht
+Z21 FWaveform1.vwf.vht
+l0
+L31
+VZFX7iJ9`9Pe`gDWF>U67Y2
+!s100 ]gV]>YLEnW<G7=30zdUPO1
+R12
+32
+Z22 !s110 1699308706
+!i10b 1
+R14
+Z23 !s90 -work|work|Waveform1.vwf.vht|
+Z24 !s107 Waveform1.vwf.vht|
+!i113 1
+R17
+R18
+Atoplevel_arch
+R7
+R8
+Z25 DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZFX7iJ9`9Pe`gDWF>U67Y2
+l80
+L33
+V^j25N^WVmRehUcCEdgkhg2
+!s100 IHD?mA8VF>HF?gXSRG7F00
+R12
+32
+R22
+!i10b 1
+R14
+R23
+R24
+!i113 1
+R17
+R18
