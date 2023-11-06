@@ -7,6 +7,7 @@ source_file = 1, output_files/Waveform.vwf
 source_file = 1, ../../../Waveform.vwf
 source_file = 1, ../../../Waveform7.vwf
 source_file = 1, G:/Meu Drive/FURG/3/SD/sistemasDigitais/Waveform.vwf
+source_file = 1, G:/Meu Drive/FURG/3/SD/sistemasDigitais/Waveform1.vwf
 source_file = 1, c:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/17.1/quartus/libraries/vhdl/ieee/timing_b.vhd

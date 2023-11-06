@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/05/2023 18:45:39"
+-- Generated on "11/06/2023 20:27:39"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          toplevel
 -- 
@@ -44,7 +44,6 @@ SIGNAL entradaTopLevel : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL escritaTopLevel : STD_LOGIC;
 SIGNAL leituraExtendidaTopLevel : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL leituraTopLevel : STD_LOGIC;
-SIGNAL saidaAnd : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL saidaOr1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL saidaOr2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL saidaOr3 : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -67,11 +66,10 @@ COMPONENT toplevel
 	escritaTopLevel : IN STD_LOGIC;
 	leituraExtendidaTopLevel : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	leituraTopLevel : IN STD_LOGIC;
-	saidaAnd : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaOr1 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaOr2 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaOr3 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
-	saidaTopLevel : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	saidaTopLevel : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaTopLevel1 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaTopLevel2 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	saidaTopLevel3 : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -94,7 +92,6 @@ BEGIN
 	escritaTopLevel => escritaTopLevel,
 	leituraExtendidaTopLevel => leituraExtendidaTopLevel,
 	leituraTopLevel => leituraTopLevel,
-	saidaAnd => saidaAnd,
 	saidaOr1 => saidaOr1,
 	saidaOr2 => saidaOr2,
 	saidaOr3 => saidaOr3,
@@ -257,52 +254,4 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_leituraTopLevel;
--- zerosFlipFlop[7]
-t_prcs_zerosFlipFlop_7: PROCESS
-BEGIN
-	zerosFlipFlop(7) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_7;
--- zerosFlipFlop[6]
-t_prcs_zerosFlipFlop_6: PROCESS
-BEGIN
-	zerosFlipFlop(6) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_6;
--- zerosFlipFlop[5]
-t_prcs_zerosFlipFlop_5: PROCESS
-BEGIN
-	zerosFlipFlop(5) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_5;
--- zerosFlipFlop[4]
-t_prcs_zerosFlipFlop_4: PROCESS
-BEGIN
-	zerosFlipFlop(4) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_4;
--- zerosFlipFlop[3]
-t_prcs_zerosFlipFlop_3: PROCESS
-BEGIN
-	zerosFlipFlop(3) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_3;
--- zerosFlipFlop[2]
-t_prcs_zerosFlipFlop_2: PROCESS
-BEGIN
-	zerosFlipFlop(2) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_2;
--- zerosFlipFlop[1]
-t_prcs_zerosFlipFlop_1: PROCESS
-BEGIN
-	zerosFlipFlop(1) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_1;
--- zerosFlipFlop[0]
-t_prcs_zerosFlipFlop_0: PROCESS
-BEGIN
-	zerosFlipFlop(0) <= '0';
-WAIT;
-END PROCESS t_prcs_zerosFlipFlop_0;
 END toplevel_arch;

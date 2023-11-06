@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
 
--- DATE "11/06/2023 19:11:43"
+-- DATE "11/06/2023 20:27:40"
 
 -- 
 -- Device: Altera EP4CE55F29I8L Package FBGA780
@@ -237,12 +237,12 @@ SIGNAL \orGate2|outputOr\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \flipflop3|Q\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \flipflop2|Q\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \flipflop4|Q\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \ALT_INV_enderecoTopLevel2~input_o\ : std_logic;
-SIGNAL \ALT_INV_enderecoTopLevel1~input_o\ : std_logic;
 SIGNAL \flipflop4|ALT_INV_process_0~1_combout\ : std_logic;
 SIGNAL \flipflop2|ALT_INV_process_0~1_combout\ : std_logic;
 SIGNAL \flipflop3|ALT_INV_process_0~1_combout\ : std_logic;
 SIGNAL \flipflop1|ALT_INV_process_0~1_combout\ : std_logic;
+SIGNAL \ALT_INV_enderecoTopLevel2~input_o\ : std_logic;
+SIGNAL \ALT_INV_enderecoTopLevel1~input_o\ : std_logic;
 
 BEGIN
 
@@ -269,12 +269,12 @@ saidaOr3 <= ww_saidaOr3;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ALT_INV_enderecoTopLevel2~input_o\ <= NOT \enderecoTopLevel2~input_o\;
-\ALT_INV_enderecoTopLevel1~input_o\ <= NOT \enderecoTopLevel1~input_o\;
 \flipflop4|ALT_INV_process_0~1_combout\ <= NOT \flipflop4|process_0~1_combout\;
 \flipflop2|ALT_INV_process_0~1_combout\ <= NOT \flipflop2|process_0~1_combout\;
 \flipflop3|ALT_INV_process_0~1_combout\ <= NOT \flipflop3|process_0~1_combout\;
 \flipflop1|ALT_INV_process_0~1_combout\ <= NOT \flipflop1|process_0~1_combout\;
+\ALT_INV_enderecoTopLevel2~input_o\ <= NOT \enderecoTopLevel2~input_o\;
+\ALT_INV_enderecoTopLevel1~input_o\ <= NOT \enderecoTopLevel1~input_o\;
 
 \saidaTopLevel[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
